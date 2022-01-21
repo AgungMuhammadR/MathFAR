@@ -1,4 +1,4 @@
-package com.example.mathfar;
+package com.agriman.quizzapp;
 
 import org.junit.Test;
 
