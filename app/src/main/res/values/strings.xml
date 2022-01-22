@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">QuizzApp</string>
+    // TODO: 22/02/18
+    <string name="home">Home</string>
+    <string name="kelas">Kelas</string>
+    <string name="rank">Rank</string>
+    <string name="profile">Profile</string>
 </resources>
