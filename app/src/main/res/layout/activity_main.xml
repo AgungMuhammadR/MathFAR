@@ -4,21 +4,329 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context=".MainActivity">
 
     <!--Content Main-->
+
+    <ImageView
+        android:id="@+id/logoDashboard"
+        android:layout_width="350dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="48dp"
+        android:src="@drawable/ayobelajar2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <TextView
+        android:id="@+id/harini"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:padding="15dp"
+        android:textSize="18sp"
+        android:text="Kelas hari ini"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        tools:listitem="@layout/list_item"/>
+
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            card_view:cardCornerRadius="6dp"
+            card_view:cardElevation="3dp"
+            card_view:cardUseCompatPadding="true"
+            android:layout_marginTop="250dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="16dp"
+            android:background="#3E9FFF">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:background="#3E9FFF"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#3E9FFF">
+                    <ImageView
+                        android:id="@+id/pic_class1"
+                        android:layout_width="100dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="0dp"
+                        android:src="@drawable/kelas1"
+                        />
+                    <TextView
+                        android:id="@+id/class_name1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/kelas_1"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            card_view:cardCornerRadius="6dp"
+            card_view:cardElevation="3dp"
+            card_view:cardUseCompatPadding="true"
+            android:layout_marginTop="350dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="16dp"
+            android:background="#3E9FFF">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:background="#3E9FFF"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/pic_class2"
+                        android:layout_width="100dp"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="0dp"
+                        android:src="@drawable/kelas2"
+                        />
+                    <TextView
+                        android:id="@+id/class_name2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/kelas_2"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            card_view:cardCornerRadius="6dp"
+            card_view:cardElevation="3dp"
+            card_view:cardUseCompatPadding="true"
+            android:layout_marginTop="450dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="16dp"
+            android:background="#3E9FFF">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:background="#3E9FFF"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/pic_class3"
+                        android:layout_width="100dp"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="0dp"
+                        android:src="@drawable/kelas3" />
+                    <TextView
+                        android:id="@+id/class_name3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/kelas_3"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            card_view:cardCornerRadius="6dp"
+            card_view:cardElevation="3dp"
+            card_view:cardUseCompatPadding="true"
+            android:layout_marginTop="550dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="16dp"
+            android:background="#3E9FFF">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:background="#3E9FFF"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/pic_class4"
+                        android:layout_width="100dp"
+                        android:layout_height="65dp"
+                        android:layout_marginStart="0dp"
+                        android:src="@drawable/kelas4"
+                        />
+                    <TextView
+                        android:id="@+id/class_name4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/kelas_4"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            card_view:cardCornerRadius="6dp"
+            card_view:cardElevation="3dp"
+            card_view:cardUseCompatPadding="true"
+            android:layout_marginTop="650dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="16dp"
+            android:background="#3E9FFF">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:background="#3E9FFF"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/pic_class5"
+                        android:layout_width="100dp"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="0dp"
+                        android:src="@drawable/kelas5"
+                        />
+                    <TextView
+                        android:id="@+id/class_name5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/kelas_5"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            card_view:cardCornerRadius="6dp"
+            card_view:cardElevation="3dp"
+            card_view:cardUseCompatPadding="true"
+            android:layout_marginTop="750dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="16dp"
+            android:background="#3E9FFF">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:background="#3E9FFF"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/pic_class6"
+                        android:layout_width="100dp"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="0dp"
+                        android:src="@drawable/kelas6"
+                        />
+                    <TextView
+                        android:id="@+id/class_name6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/kelas_6"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
     <FrameLayout
         android:id="@+id/fl_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bn_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorIcon"
         app:itemIconTint="@drawable/state_bnv"
         app:itemTextColor="@drawable/state_bnv"
         app:menu="@menu/bottomnavigation_menu" />

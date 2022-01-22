@@ -7,4 +7,9 @@
         <item name="colorAccent">@color/teal_200</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="kelas_1">
+        <item name="android:textSize">17.24sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
 </resources>
