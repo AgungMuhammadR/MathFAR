@@ -3,6 +3,7 @@ package com.example.quizzapp;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.EditText;
 import java.util.List;
@@ -11,12 +12,17 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
+
 import android.graphics.drawable.Drawable;
+import android.widget.TableLayout;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -33,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
     private String strUsr, strEmail, strPsw;
     private FirebaseAuth mAuth;
     private boolean statusLogin = false;
+    TabLayout tabLayout;
+    ViewPager viewPager;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +62,13 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_question);
+        setContentView(R.layout.activity_rank);
+
+        tabLayout = findViewById(R.id.tablayout);
+        viewPager = findViewById(R.id.viewpager);
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getTabs();
 
 //        context = getApplicationContext();
 //
@@ -64,6 +79,26 @@ public class MainActivity extends AppCompatActivity {
 //        recyclerViewAdapter = new AdapterRecyclerView(context, listItem);
 //        recyclerView.setAdapter(recyclerViewAdapter);
 
+    }
+    public void getTabs(){
+        final ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+        new Handler().post(new Runnable() {
+            @Override
+            public void run() {
+                viewPagerAdapter.addFragment(EasyFragment.getInstance(),"Easy");
+                viewPagerAdapter.addFragment(MediumFragment.getInstance(),"Medium");
+                viewPagerAdapter.addFragment(HardFragment.getInstance(),"Hard");
+
+                viewPager.setAdapter(viewPagerAdapter);
+                tabLayout.setupWithViewPager(viewPager);
+
+                tabLayout.getTabAt(0).setIcon(R.drawable.easy);
+                tabLayout.getTabAt(1).setIcon(R.drawable.medium);
+                tabLayout.getTabAt(2).setIcon(R.drawable.hard);
+
+
+            }
+        });
     }
 
     public void signIn (View v) {

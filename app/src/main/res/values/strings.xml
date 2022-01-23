@@ -19,5 +19,7 @@
     <string name="question_ex">Di dalam kandang ada 17 ayam. Dijual paman 8. Paman membeli lagi 4.
     Jumlah ayam paman sekarang ada....</string>
     <string name="choose_answer">Pilih Jawaban</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
