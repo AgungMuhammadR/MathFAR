@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".MainActivity">
+
+    <!--Content Main-->
+
+    <TextView
+        android:id="@+id/pilih_level"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:padding="15dp"
+        android:textSize="18sp"
+        android:text="Pilih Tingkat Kesulitan"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/easy"
+        android:layout_width="190dp"
+        android:layout_height="145dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginStart="85dp"
+        android:textAlignment="center"
+        android:background="@color/colorPrimary"
+        app:cardCornerRadius="20dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:src="@drawable/easy"
+            android:background="@color/colorIcon">
+        </ImageView>
+        <TextView
+            android:layout_marginTop="100dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/easy"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:background="@color/colorIcon"
+            android:textColor="#FFFFFF">
+        </TextView>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/medium"
+        android:layout_width="190dp"
+        android:layout_height="145dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginStart="85dp"
+        android:textAlignment="center"
+        app:cardCornerRadius="20dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:src="@drawable/medium"
+            android:background="@color/colorIcon">
+        </ImageView>
+        <TextView
+            android:layout_marginTop="100dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/medium"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:background="@color/colorIcon"
+            android:textColor="#FFFFFF">
+        </TextView>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/hard"
+        android:layout_width="190dp"
+        android:layout_height="145dp"
+        android:layout_marginTop="420dp"
+        android:layout_marginStart="85dp"
+        android:textAlignment="center"
+        android:background="@color/colorPrimary"
+        app:cardCornerRadius="20dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:src="@drawable/hard"
+            android:background="@color/colorIcon">
+        </ImageView>
+        <TextView
+            android:layout_marginTop="100dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/hard"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:background="@color/colorIcon"
+            android:textColor="#FFFFFF">
+        </TextView>
+    </androidx.cardview.widget.CardView>
+
+    <FrameLayout
+        android:id="@+id/fl_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    </FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bn_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorIcon"
+        app:itemIconTint="@drawable/state_bnv"
+        app:itemTextColor="@drawable/state_bnv"
+        app:menu="@menu/bottomnavigation_menu" />
+
+</RelativeLayout>

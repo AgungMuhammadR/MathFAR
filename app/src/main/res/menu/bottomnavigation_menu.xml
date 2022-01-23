@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home_menu"
+        android:title="@string/home"
+        android:icon="@drawable/ic_home" />
+
+    <item
+        android:id="@+id/kelas_menu"
+        android:title="@string/kelas"
+        android:icon="@drawable/ic_kelas_hide"/>
+
+    <item
+        android:id="@+id/rank_menu"
+        android:title="@string/rank"
+        android:icon="@drawable/ic_rank_hide"/>
+    <item
+        android:id="@+id/profile_menu"
+        android:title="@string/profile"
+        android:icon="@drawable/ic_profile_hide"/>
+</menu>
