@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pilih_level);
+        setContentView(R.layout.activity_question);
 
 //        context = getApplicationContext();
 //

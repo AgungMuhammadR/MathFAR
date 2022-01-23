@@ -14,5 +14,10 @@
     <string name="easy">Easy</string>
     <string name="medium">Medium</string>
     <string name="hard">Hard</string>
+    <string name="level">Pilih Tingkat Kesulitan</string>
+    <string name="time">00:58</string>
+    <string name="question_ex">Di dalam kandang ada 17 ayam. Dijual paman 8. Paman membeli lagi 4.
+    Jumlah ayam paman sekarang ada....</string>
+    <string name="choose_answer">Pilih Jawaban</string>
 
 </resources>
