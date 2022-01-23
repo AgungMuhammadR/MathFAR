@@ -11,4 +11,8 @@
     <string name="kelas_4">Kelas 4</string>
     <string name="kelas_5">Kelas 5</string>
     <string name="kelas_6">Kelas 6</string>
+    <string name="easy">Easy</string>
+    <string name="medium">Medium</string>
+    <string name="hard">Hard</string>
+
 </resources>

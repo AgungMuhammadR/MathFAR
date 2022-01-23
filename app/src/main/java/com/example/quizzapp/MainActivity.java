@@ -37,32 +37,32 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        Context context;
-        List<ItemObjectKelas> listItem;
-        RecyclerView recyclerView, recyclerView2;
-        RecyclerView.Adapter recyclerViewAdapter;
-        RecyclerView.LayoutManager recylerViewLayoutManager;
-        String[] subjects = {"Kelas 1", "Kelas 2", "Kelas 3", "Kelas 4", "Kelas 5", "Kelas 6"};
-        Drawable [] drwImg = {getResources().getDrawable(R.drawable.kelas1), getResources().getDrawable(R.drawable.kelas2),
-                getResources().getDrawable(R.drawable.kelas3),getResources().getDrawable(R.drawable.kelas4),
-                getResources().getDrawable(R.drawable.kelas5),getResources().getDrawable(R.drawable.kelas6)};
-
-        listItem = new ArrayList<>();
-        for (int i=0; i<6; i++) {
-            listItem.add(new ItemObjectKelas(subjects[i], drwImg[i]));
-        }
+//        Context context;
+//        List<ItemObjectKelas> listItem;
+//        RecyclerView recyclerView, recyclerView2;
+//        RecyclerView.Adapter recyclerViewAdapter;
+//        RecyclerView.LayoutManager recylerViewLayoutManager;
+//        String[] subjects = {"Kelas 1", "Kelas 2", "Kelas 3", "Kelas 4", "Kelas 5", "Kelas 6"};
+//        Drawable [] drwImg = {getResources().getDrawable(R.drawable.kelas1), getResources().getDrawable(R.drawable.kelas2),
+//                getResources().getDrawable(R.drawable.kelas3),getResources().getDrawable(R.drawable.kelas4),
+//                getResources().getDrawable(R.drawable.kelas5),getResources().getDrawable(R.drawable.kelas6)};
+//
+//        listItem = new ArrayList<>();
+//        for (int i=0; i<6; i++) {
+//            listItem.add(new ItemObjectKelas(subjects[i], drwImg[i]));
+//        }
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_pilih_level);
 
-        context = getApplicationContext();
-
-        recyclerView = findViewById(R.id.recyclerView);
-        recylerViewLayoutManager = new LinearLayoutManager(context);
-        recyclerView.setLayoutManager(recylerViewLayoutManager);
-
-        recyclerViewAdapter = new AdapterRecyclerView(context, listItem);
-        recyclerView.setAdapter(recyclerViewAdapter);
+//        context = getApplicationContext();
+//
+//        recyclerView = findViewById(R.id.recyclerView);
+//        recylerViewLayoutManager = new LinearLayoutManager(context);
+//        recyclerView.setLayoutManager(recylerViewLayoutManager);
+//
+//        recyclerViewAdapter = new AdapterRecyclerView(context, listItem);
+//        recyclerView.setAdapter(recyclerViewAdapter);
 
     }
 
