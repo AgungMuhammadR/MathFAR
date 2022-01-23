@@ -14,6 +14,10 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class MediumFragment extends Fragment {
+    public static MediumFragment getInstance(){
+        MediumFragment mediumFragment = new MediumFragment();
+        return mediumFragment;
+    }
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

@@ -11,4 +11,7 @@
     <string name="kelas_4">Kelas 4</string>
     <string name="kelas_5">Kelas 5</string>
     <string name="kelas_6">Kelas 6</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
