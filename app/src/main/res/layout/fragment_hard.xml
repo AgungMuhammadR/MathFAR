@@ -36,7 +36,7 @@
                     android:layout_gravity="center"
                     android:layout_marginStart="0dp"
                     android:drawablePadding="215dp"
-                    android:src="@drawable/ic_launcher_foreground" />
+                    android:src="@drawable/number" />
 
                 <ImageView
                     android:layout_width="46dp"

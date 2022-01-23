@@ -22,6 +22,7 @@ import android.widget.TableLayout;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -66,10 +67,11 @@ public class MainActivity extends AppCompatActivity {
 
         tabLayout = findViewById(R.id.tablayout);
         viewPager = findViewById(R.id.viewpager);
-        toolbar = findViewById(R.id.toolbar);
+        toolbar =  findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setTitleTextColor(getResources().getColor(R.color.white));
         getTabs();
-
+//
 //        context = getApplicationContext();
 //
 //        recyclerView = findViewById(R.id.recyclerView);
@@ -100,6 +102,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
 
     public void signIn (View v) {
 

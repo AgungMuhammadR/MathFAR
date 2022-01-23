@@ -76,6 +76,15 @@
             android:background="@color/colorIcon"
             android:textColor="#FFFFFF">
         </TextView>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bn_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorIcon"
+            app:itemIconTint="@drawable/state_bnv"
+            app:itemTextColor="@drawable/state_bnv"
+            app:menu="@menu/bottomnavigation_menu" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -113,15 +122,5 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     </FrameLayout>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bn_main"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/colorIcon"
-        app:itemIconTint="@drawable/state_bnv"
-        app:itemTextColor="@drawable/state_bnv"
-        app:menu="@menu/bottomnavigation_menu" />
 
 </RelativeLayout>

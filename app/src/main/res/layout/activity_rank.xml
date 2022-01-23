@@ -3,7 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#323660">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#323660"
+    tools:context=".MainActivity">
+    <TextView
+        android:id="@+id/leaderboard"
+        android:layout_width="90"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:textSize="18sp"
+        android:text="Leaderboard"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
