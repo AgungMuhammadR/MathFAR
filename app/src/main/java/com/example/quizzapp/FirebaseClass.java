@@ -16,7 +16,10 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class FirebaseClass {
@@ -36,26 +39,5 @@ public class FirebaseClass {
 
     }
 
-
-    public boolean authLogin (String psw, String mail) {
-
-
-
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        db.collection("users")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-
-                            }
-                        }
-                    }
-                });
-
-        return false;
-    }
 
 }

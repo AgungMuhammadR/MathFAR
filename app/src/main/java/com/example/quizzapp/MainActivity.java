@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.EditText;
+
+import java.lang.reflect.Type;
 import java.util.List;
 
 
@@ -25,6 +27,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -44,65 +47,30 @@ public class MainActivity extends AppCompatActivity {
     ViewPager viewPager;
     Toolbar toolbar;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-//        Context context;
-//        List<ItemObjectKelas> listItem;
-//        RecyclerView recyclerView, recyclerView2;
-//        RecyclerView.Adapter recyclerViewAdapter;
-//        RecyclerView.LayoutManager recylerViewLayoutManager;
-//        String[] subjects = {"Kelas 1", "Kelas 2", "Kelas 3", "Kelas 4", "Kelas 5", "Kelas 6"};
-//        Drawable [] drwImg = {getResources().getDrawable(R.drawable.kelas1), getResources().getDrawable(R.drawable.kelas2),
-//                getResources().getDrawable(R.drawable.kelas3),getResources().getDrawable(R.drawable.kelas4),
-//                getResources().getDrawable(R.drawable.kelas5),getResources().getDrawable(R.drawable.kelas6)};
-//
-//        listItem = new ArrayList<>();
-//        for (int i=0; i<6; i++) {
-//            listItem.add(new ItemObjectKelas(subjects[i], drwImg[i]));
-//        }
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rank);
-
-        tabLayout = findViewById(R.id.tablayout);
-        viewPager = findViewById(R.id.viewpager);
-        toolbar =  findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        toolbar.setTitleTextColor(getResources().getColor(R.color.white));
-        getTabs();
-//
-//        context = getApplicationContext();
-//
-//        recyclerView = findViewById(R.id.recyclerView);
-//        recylerViewLayoutManager = new LinearLayoutManager(context);
-//        recyclerView.setLayoutManager(recylerViewLayoutManager);
-//
-//        recyclerViewAdapter = new AdapterRecyclerView(context, listItem);
-//        recyclerView.setAdapter(recyclerViewAdapter);
+        setContentView(R.layout.activity_login);
 
     }
-    public void getTabs(){
-        final ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
-        new Handler().post(new Runnable() {
-            @Override
-            public void run() {
-                viewPagerAdapter.addFragment(EasyFragment.getInstance(),"Easy");
-                viewPagerAdapter.addFragment(MediumFragment.getInstance(),"Medium");
-                viewPagerAdapter.addFragment(HardFragment.getInstance(),"Hard");
-
-                viewPager.setAdapter(viewPagerAdapter);
-                tabLayout.setupWithViewPager(viewPager);
-
-                tabLayout.getTabAt(0).setIcon(R.drawable.easy);
-                tabLayout.getTabAt(1).setIcon(R.drawable.medium);
-                tabLayout.getTabAt(2).setIcon(R.drawable.hard);
 
 
-            }
-        });
+    public boolean checkLogin (String xd, String y) {
+
+        boolean x;
+
+        if ( (this.textMail.equals(xd)) && (this.textPsw.equals(y)) ) {
+            x = true;
+        }
+
+        else {
+            x = false;
+        }
+        return x;
+
     }
-
 
 
     public void signIn (View v) {
@@ -110,21 +78,41 @@ public class MainActivity extends AppCompatActivity {
         email = (EditText) findViewById(R.id.etLoginEmail);
         password = (EditText) findViewById(R.id.etLoginPassword);
 
-        textMail = email.getText().toString();
-        textPsw = password.getText().toString();
+        this.textMail = email.getText().toString();
+        this.textPsw = password.getText().toString();
 
-        FirebaseClass frb = new FirebaseClass();
-        statusLogin = frb.authLogin(textPsw, textMail);
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("users")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        boolean loggedIn = false;
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                loggedIn = checkLogin(document.getString("email"), document.getString("password"));
 
-        if (statusLogin) {
-            Intent myIntent = new Intent(getApplicationContext(), HomeClass.class);
-            startActivity(myIntent);
-        }
+                                if(loggedIn) {
+                                    break;
+                                }
+                            }
+                        }
 
-        else {
-            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-            builder.setMessage("Email atau Password Anda salah!").setNegativeButton("Tutup", null).create().show();
-        }
+                        if (loggedIn) {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                            builder.setMessage("Email atau Password Anda benar!").setNegativeButton("Tutup", null).create().show();
+                            Intent i = new Intent(getApplicationContext(),HomeClass.class);
+                            startActivity(i);
+                        }
+
+                        else {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                            builder.setMessage("Email atau Password Anda salah!").setNegativeButton("Tutup", null).create().show();
+
+                        }
+
+                    }
+                });
 
     }
 

@@ -19,16 +19,16 @@
         android:layout_marginBottom="16dp"
         android:padding="15dp"
         android:textSize="18sp"
-        android:text="Pilih Tingkat Kesulitan"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 
     <androidx.cardview.widget.CardView
         android:id="@+id/easy"
         android:layout_width="190dp"
         android:layout_height="145dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="95dp"
         android:layout_marginStart="85dp"
         android:textAlignment="center"
         android:background="@color/colorPrimary"
@@ -50,13 +50,14 @@
             android:background="@color/colorIcon"
             android:textColor="#FFFFFF">
         </TextView>
+
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/medium"
         android:layout_width="190dp"
         android:layout_height="145dp"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="265dp"
         android:layout_marginStart="85dp"
         android:textAlignment="center"
         app:cardCornerRadius="20dp">
@@ -77,21 +78,13 @@
             android:textColor="#FFFFFF">
         </TextView>
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bn_main"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorIcon"
-            app:itemIconTint="@drawable/state_bnv"
-            app:itemTextColor="@drawable/state_bnv"
-            app:menu="@menu/bottomnavigation_menu" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/hard"
         android:layout_width="190dp"
         android:layout_height="145dp"
-        android:layout_marginTop="420dp"
+        android:layout_marginTop="435dp"
         android:layout_marginStart="85dp"
         android:textAlignment="center"
         android:background="@color/colorPrimary"
@@ -113,6 +106,7 @@
             android:background="@color/colorIcon"
             android:textColor="#FFFFFF">
         </TextView>
+
     </androidx.cardview.widget.CardView>
 
     <FrameLayout
@@ -122,5 +116,16 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     </FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bn_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorIcon"
+        app:itemIconTint="@drawable/state_bnv"
+        app:itemTextColor="@drawable/state_bnv"
+        app:menu="@menu/bottomnavigation_menu" />
+
 
 </RelativeLayout>
