@@ -53,16 +53,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
     }
 
 
-    public boolean checkLogin (String xd, String y) {
+    public boolean checkLogin (String id, String usr, String mail, String psw, String skor, String ls, String ll) {
 
         boolean x;
 
-        if ( (this.textMail.equals(xd)) && (this.textPsw.equals(y)) ) {
+        if ( (this.textMail.equals(mail)) && (this.textPsw.equals(psw)) ) {
             x = true;
+            UserDataClass udc = new UserDataClass(usr, mail, id, skor, ls, ll);
         }
 
         else {
@@ -90,7 +90,15 @@ public class MainActivity extends AppCompatActivity {
                         boolean loggedIn = false;
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                loggedIn = checkLogin(document.getString("email"), document.getString("password"));
+                                loggedIn = checkLogin(
+                                        document.getId(),
+                                        document.getString("username"),
+                                        document.getString("email"),
+                                        document.getString("password"),
+                                        document.getString("skor"),
+                                        document.getString("listsoal"),
+                                        document.getString("listlevel")
+                                );
 
                                 if(loggedIn) {
                                     break;
@@ -120,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent i = new Intent(getApplicationContext(),RegisterClass.class);
         startActivity(i);
+
 
     }
 

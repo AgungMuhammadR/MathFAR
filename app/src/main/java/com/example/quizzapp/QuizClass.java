@@ -8,8 +8,11 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import java.util.Locale;
+
 public class QuizClass extends AppCompatActivity {
 
+    private String kelasTemp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +21,9 @@ public class QuizClass extends AppCompatActivity {
 
         Intent intent = getIntent();
         String kelas = intent.getStringExtra("KELAS");
+
+        kelasTemp = kelas.replaceAll("\\s","");
+        kelasTemp = kelasTemp.toLowerCase(Locale.ROOT);
 
         TextView textLevel = (TextView) findViewById(R.id.pilih_level);
         textLevel.setText("Pilih Tingkat Kesulitan " + kelas);
@@ -30,6 +36,12 @@ public class QuizClass extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                KuisDataClass kdc = new KuisDataClass(kelasTemp, "easy");
+
+                Intent intent = new Intent(getApplicationContext(), StartQuizClass.class);
+                intent.putExtra("LEVEL", "easy");
+                intent.putExtra("SOALKELAS", kelasTemp);
+                startActivity(intent);
             }
         });
 
@@ -37,6 +49,12 @@ public class QuizClass extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                KuisDataClass kdc = new KuisDataClass(kelasTemp, "medium");
+
+                Intent intent = new Intent(getApplicationContext(), StartQuizClass.class);
+                intent.putExtra("LEVEL", "medium");
+                intent.putExtra("SOALKELAS", kelasTemp);
+                startActivity(intent);
             }
         });
 
@@ -44,6 +62,12 @@ public class QuizClass extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                KuisDataClass kdc = new KuisDataClass(kelasTemp, "hard");
+
+                Intent intent = new Intent(getApplicationContext(), StartQuizClass.class);
+                intent.putExtra("LEVEL", "hard");
+                intent.putExtra("SOALKELAS", kelasTemp);
+                startActivity(intent);
             }
         });
 

@@ -1,74 +1,41 @@
 package com.example.quizzapp;
 
-import android.os.Bundle;
-
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
-import android.os.Handler;
-import android.view.ContextMenu;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.EditText;
-
-import java.lang.reflect.Type;
-import java.util.List;
-
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.ViewPager;
-
 import android.graphics.drawable.Drawable;
-import android.widget.TableLayout;
-import android.widget.TextView;
+import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.android.material.badge.BadgeDrawable;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.tabs.TabLayout;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
-public class HomeClass extends AppCompatActivity {
+public class PilihKelas extends AppCompatActivity {
 
-    TabLayout tabLayout;
-    ViewPager viewPager;
-    Toolbar toolbar;
     Context context;
     List<ItemObjectKelas> listItem;
     RecyclerView recyclerView, recyclerView2;
     RecyclerView.Adapter recyclerViewAdapter;
     RecyclerView.LayoutManager recylerViewLayoutManager;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard);
+        setContentView(R.layout.activity_pilih_kelas);
         recyclerView = findViewById(R.id.recyclerView);
+
         setData();
         setAdapter();
 
         BottomNavigationView bottomNav = findViewById(R.id.bn_main);
-        bottomNav.getMenu().getItem(0).setChecked(true);
+        bottomNav.getMenu().getItem(1).setChecked(true);
 
         bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -98,12 +65,11 @@ public class HomeClass extends AppCompatActivity {
                 return true;
             }
         });
-
     }
 
     private void setData() {
         String[] subjects = {"Kelas 1", "Kelas 2", "Kelas 3", "Kelas 4", "Kelas 5", "Kelas 6"};
-        Drawable [] drwImg = {getResources().getDrawable(R.drawable.kelas1), getResources().getDrawable(R.drawable.kelas2),
+        Drawable[] drwImg = {getResources().getDrawable(R.drawable.kelas1), getResources().getDrawable(R.drawable.kelas2),
                 getResources().getDrawable(R.drawable.kelas3),getResources().getDrawable(R.drawable.kelas4),
                 getResources().getDrawable(R.drawable.kelas5),getResources().getDrawable(R.drawable.kelas6)};
 
@@ -123,8 +89,4 @@ public class HomeClass extends AppCompatActivity {
         recyclerView.setLayoutManager(recylerViewLayoutManager);
         recyclerView.setAdapter(recyclerViewAdapter);
     }
-
-
-
-
 }

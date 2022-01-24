@@ -23,6 +23,11 @@
         <activity android:name=".RegisterClass" />
         <activity android:name=".HomeClass" />
         <activity android:name=".QuizClass" />
+        <activity android:name=".StartQuizClass" />
+        <activity android:name=".EndQuizClass" />
+        <activity android:name=".PilihKelas" />
+        <activity android:name=".RankClass" />
+        <activity android:name=".ProfileClass" />
     </application>
 
 </manifest>

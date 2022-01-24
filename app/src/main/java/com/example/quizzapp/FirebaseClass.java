@@ -33,10 +33,26 @@ public class FirebaseClass {
         user.put("username" , username);
         user.put("email", email);
         user.put("password", password);
+        user.put("skor", "0");
+        user.put("listsoal", "");
+        user.put("listlevel","");
 
         // Add a new document with a generated ID
         db.collection("users").add(user);
 
+    }
+
+    public void generateQuestions () {
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        // Create a new user with a first and last name
+        Map<String, Object> questions = new HashMap<>();
+        questions.put("question","3 + 5 = ");
+        questions.put("answer", 8);
+        questions.put("level", "easy");
+        // Add a new document with a generated ID
+        db.collection("kelas6").add(questions);
     }
 
 

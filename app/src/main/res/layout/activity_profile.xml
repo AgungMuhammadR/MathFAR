@@ -1,6 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterClass"
+    android:background="#323660">
+
+    <!--    app:layout_constraintBottom_toTopOf="@+id/etUsername"-->
+
+    <LinearLayout
+        android:id="@+id/profile_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/etUsername"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="50dp">
+
+        <ImageView
+            android:id="@+id/logoDashboard"
+            android:layout_width="110dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/foto_user"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:text="Agung Muhammad R"
+            android:textColor="@color/white"
+            android:id="@+id/nama"
+            android:layout_width="160dp"
+            android:layout_height="80dp"
+            android:textAlignment="center"
+            android:paddingTop="30dp"
+            android:textSize="16sp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="20dp">
+        </TextView>
+
+        <TextView
+            android:text="Ubah"
+            android:textColor="@color/colorblue"
+            android:layout_width="90dp"
+            android:layout_height="80dp"
+            android:textAlignment="center"
+            android:paddingTop="30dp"
+            android:textSize="16sp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="20dp">
+        </TextView>
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/et"
+        android:backgroundTint="#383E6E"
+        android:drawablePadding="12dp"
+        android:fontFamily="@font/mregular"
+        android:hint="Agung Muhammad R"
+        android:inputType="textPersonName"
+        android:padding="15dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#AEA9A9"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/etEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etUsername"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/et"
+        android:backgroundTint="#383E6E"
+        android:drawablePadding="12dp"
+        android:fontFamily="@font/mregular"
+        android:hint="rizkiagung9918@gmail.com"
+        android:inputType="textEmailAddress"
+        android:padding="15dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#AEA9A9"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/etPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etEmail"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/et"
+        android:backgroundTint="#383E6E"
+        android:drawablePadding="12dp"
+        android:fontFamily="@font/mregular"
+        android:hint=".............."
+        android:inputType="textWebPassword"
+        android:padding="15dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#AEA9A9"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnRiwayatKuis"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/btnLoginClickForSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etPassword"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/mregular"
+        android:text="Settings"
+        android:textColor="#ffff"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRiwayatKuis" />
+
+
+    <Button
+        android:id="@+id/btnRiwayatKuis"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etPassword"
+        android:layout_marginStart="24dp"
+        android:background="@drawable/et"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="50dp"
+        android:fontFamily="@font/mbold"
+        android:text="Riwayat Kuis"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        app:backgroundTint="#3E9FFF"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword"
+        />
+
+    <FrameLayout
+        android:id="@+id/fl_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-95dp">
+
+    </FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bn_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="75dp"
+        android:background="@color/colorIcon"
+        app:itemIconTint="@drawable/state_bnv"
+        app:itemTextColor="@drawable/state_bnv"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRiwayatKuis"
+        app:menu="@menu/bottomnavigation_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -57,6 +57,10 @@
         app:layout_constraintStart_toStartOf="parent"
         android:textAlignment="center"/>
 
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -68,12 +72,14 @@
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="16dp"
             android:layout_marginStart="70dp"
-            android:background="@color/colorIcon">
+            android:background="@color/colorIcon"
+            app:cardCornerRadius="15dp">
 
             <TextView
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:text="A. 10"
+                android:id="@+id/textA"
                 android:paddingTop="10dp"
                 android:textSize="20sp"
                 android:textAlignment="center"
@@ -88,12 +94,14 @@
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="16dp"
             android:layout_marginStart="0dp"
-            android:background="@color/colorIcon">
+            android:background="@color/colorIcon"
+            app:cardCornerRadius="15dp">
 
             <TextView
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:text="A. 10"
+                android:id="@+id/textB"
                 android:paddingTop="10dp"
                 android:textSize="20sp"
                 android:textAlignment="center"
@@ -112,12 +120,14 @@
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="16dp"
             android:layout_marginStart="70dp"
-            android:background="@color/colorIcon">
+            android:background="@color/colorIcon"
+            app:cardCornerRadius="15dp">
 
             <TextView
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:text="A. 10"
+                android:id="@+id/textC"
                 android:paddingTop="10dp"
                 android:textSize="20sp"
                 android:textAlignment="center"
@@ -132,12 +142,14 @@
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="16dp"
             android:layout_marginStart="0dp"
-            android:background="@color/colorIcon">
+            android:background="@color/colorIcon"
+            app:cardCornerRadius="15dp">
 
             <TextView
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:text="A. 10"
+                android:id="@+id/textD"
                 android:paddingTop="10dp"
                 android:textSize="20sp"
                 android:textAlignment="center"
@@ -151,27 +163,10 @@
         android:textAlignment="center"
         android:background="@color/colorIcon"
         android:text="next"
+        android:id="@+id/next_soal"
         android:layout_marginTop="500dp"
         android:layout_marginStart="80dp">
 
     </Button>
-
-    <FrameLayout
-        android:id="@+id/fl_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-    </FrameLayout>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bn_main"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/colorIcon"
-        app:itemIconTint="@drawable/state_bnv"
-        app:itemTextColor="@drawable/state_bnv"
-        app:menu="@menu/bottomnavigation_menu" />
 
 </RelativeLayout>
